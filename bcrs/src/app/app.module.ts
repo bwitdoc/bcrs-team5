@@ -14,13 +14,23 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
+import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BaseLayoutComponent,
     AuthLayoutComponent,
-    HomeComponent
+    HomeComponent,
+    SecurityQuestionCreateComponent,
+    SecurityQuestionListComponent,
+    SigninComponent,
+    UserDetailsComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
