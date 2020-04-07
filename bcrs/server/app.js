@@ -7,6 +7,10 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const UserApi = require('./routes/user-api');
+const SessionApi = require('./routes/session-api');
+const SecurityQuestionApi = require('./routes/security-question-api');
+const cors = require('cors');
 
 /**
  * App configurations
@@ -17,6 +21,7 @@ app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../dist/bcrs')));
 app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
+app.use(cors());
 
 /**
  * Variables
@@ -24,7 +29,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
 const port = 3000; // server port
 
 // TODO: This line will need to be replaced with your actual database connection string
-const conn = 'mongodb+srv://superadmin:s3cret@cluster0-lujih.mongodb.net/bcrs?retryWrites=true&w=majority';
+const conn = 'mongodb+srv://admin:admin@bu-webdev-cluster-1-9y4bw.mongodb.net/bcrs-team5?retryWrites=true&w=majority';
 
 /**
  * Database connection

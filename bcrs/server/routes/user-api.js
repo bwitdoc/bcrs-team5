@@ -1,6 +1,6 @@
 const express = require('express');
 const User = require('../models/user');
-const bcrypt = require('bcrypt.js');
+const bcrypt = require('bcryptjs');
 
 const router = express.Router();
 const saltRounds = 10;
