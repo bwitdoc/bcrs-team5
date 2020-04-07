@@ -21,7 +21,7 @@ router.post('/signin', function(req, res, next) {
             type: 'success',
             auth: true,
             username: user.username,
-            time_stamp: new Date();
+            time_stamp: new Date()
           })
         } else {
           console.log(`The password for username: ${req.body.username} is invalid.`);

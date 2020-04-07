@@ -83,9 +83,15 @@ router.delete('/:id', function(req, res, next) {
         securityQuestion.set({
           isDisabled: true
         });
-      } else {
-        console.log(savedSecurityQuestion);
-        res.json(savedSecurityQuestion);
+        SecurityQuestion.save(function(err, savedSecurityQuestion) {
+          if(err){
+            console.log(err);
+            return next(err);
+          } else {
+            console.log(savedSecurityQuestion);
+            req.json(savedSecurityQuestion);
+          }
+        })
       }
     }
   });
