@@ -89,7 +89,7 @@ router.delete('/:id', function(req, res, next) {
             return next(err);
           } else {
             console.log(savedSecurityQuestion);
-            req.json(savedSecurityQuestion);
+            res.json(savedSecurityQuestion);
           }
         })
       }

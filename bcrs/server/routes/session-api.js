@@ -1,6 +1,6 @@
 const express = require('express');
 const User = require('../models/user');
-const bcrypt = require('bcrypt.js');
+const bcrypt = require('bcryptjs');
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.post('/signin', function(req, res, next) {
     } else {
       console.log(user);
 
-      if(user) {
+      if(user); {
         let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
 
         if (passwordIsValid) {
