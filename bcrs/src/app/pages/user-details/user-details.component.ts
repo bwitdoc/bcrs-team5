@@ -57,4 +57,10 @@ export class UserDetailsComponent implements OnInit {
   cancel() {
     this.router.navigate(['/users']);
   }
+=======
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 }

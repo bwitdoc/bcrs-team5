@@ -1,7 +1,6 @@
 const express = require('express');
-const User = require(../models/user);
+const User = require('../models/user');
 const bcrypt = require('bcryptjs');
-
 const router = express.Router();
 const saltRounds = 10; 
 
@@ -122,3 +121,4 @@ router.delete('/:id', function(req, res, next) {
 });
 
 module.exports = router;
+
