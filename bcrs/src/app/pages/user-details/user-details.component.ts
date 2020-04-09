@@ -13,7 +13,7 @@ export class UserDetailsComponent implements OnInit {
   userId: string;
   form: FormGroup;
   roles: any;
-}
+
   constructor(private route: ActivatedRoute, private http: HttpClient, private fb: FormBuilder, private router: Router) {
     this.userId = this.route.snapshot.paramMap.get('userId');
 
@@ -58,8 +58,4 @@ export class UserDetailsComponent implements OnInit {
     this.router.navigate(['/users']);
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 }

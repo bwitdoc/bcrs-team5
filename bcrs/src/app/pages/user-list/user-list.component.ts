@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class UserListComponent implements OnInit {
   users: any;
   displayedColumns = ['username', 'firstname', 'lastname', 'phoneNumber', 'address', 'email', 'functions'];
-  
+
   constructor(private http: HttpClient, private dialog: MatDialog) {
     this.http.get('/api/users').subscribe(res => {
       this.users = res;
@@ -28,8 +28,8 @@ export class UserListComponent implements OnInit {
     const dialogRef = this.dialog.open(UserDeleteDialogComponent, {
       data: {
         username
-      }, 
-      disableClose: true;
+      },
+      disableClose: true,
       width: '800px'
     });
 

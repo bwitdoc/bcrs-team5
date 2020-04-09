@@ -3,23 +3,37 @@ import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import { AppRoutes } from './app.routing';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
+import { CookieService } from 'ngx-cookie-service';
+import { SessionGuard } from './shared/guards/session.guard';
+
+// Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
-import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
-import { HomeComponent } from './pages/home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+
+// Components
+import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
+import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
+import { HomeComponent } from './pages/home/home.component';
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
 import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
+import { UserDeleteDialogComponent } from './dialogs/user-delete-dialog/user-delete-dialog.component';
+import { SecurityQuestionDeleteDialogComponent } from './dialogs/security-question-delete-dialog/security-question-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +46,9 @@ import { SecurityQuestionDetailsComponent } from './pages/security-question-deta
     SigninComponent,
     UserDetailsComponent,
     UserListComponent,
-    SecurityQuestionDetailsComponent
+    SecurityQuestionDetailsComponent,
+    UserDeleteDialogComponent,
+    SecurityQuestionDeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +61,15 @@ import { SecurityQuestionDetailsComponent } from './pages/security-question-deta
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatSelectModule,
+    MatTableModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatMenuModule
   ],
-  providers: [],
+  providers: [CookieService, SessionGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,8 +28,8 @@ export class SecurityQuestionListComponent implements OnInit {
     const dialogRef = this.dialog.open(SecurityQuestionDeleteDialogComponent, {
       data: {
         questionId
-      }, 
-      disableClose: true;
+      },
+      disableClose: true,
       width: '800px'
     });
 
