@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div fxLayout="column">
     <mat-card>
         <mat-card-title>Users Configuration</mat-card-title>
@@ -30,7 +29,7 @@
                     <th mat-header-cell *matHeaderCellDef>Address</th>
                     <td mat-cell *matCellDef="let element">{{element.address}}</td>
                 </ng-container>
-                
+
                 <ng-container matColumnDef="email">
                     <th mat-header-cell *matHeaderCellDef>Email</th>
                     <td mat-cell *matCellDef="let element">{{element.email}}</td>
@@ -50,23 +49,8 @@
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                
+
             </mat-card-table>
         </mat-card-content>
     </mat-card>
 </div>
-=======
-<div fxLayout='column'>
-  <mat-card class='mat-elevation-z8'>
-    <mat-card-title>Users List</mat-card-title>
-
-    <br />
-
-    <mat-card-content>
-      <mat-list role='list' *ngFor='let user of users'>
-        <mat-list-item role='listitem'>{{ user.firstname }} {{ user.lastname }}</mat-list-item>
-      </mat-list>
-    </mat-card-content>
-  </mat-card>
-</div>
->>>>>>> 0a2f8a9b9eb7f33abadab2e286ac314bb30d7434
