@@ -8,6 +8,11 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 
+const SecurityQuestionApi = require('./routes/security-question-api');
+const UserApi = require('./routes/user-api');
+const SessionApi = require('./routes/session-api');
+
+
 /**
  * App configurations
  */

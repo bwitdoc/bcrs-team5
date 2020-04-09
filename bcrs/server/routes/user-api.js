@@ -48,7 +48,7 @@ router.post('/', function(req, res, next) {
   User.create(u, function(err, newUser) {
     if (err) {
       console.log(err);
-      return nexxt(err);
+      return next(err);
     } else {
       console.log(newUser);
       res.status(200).send({
