@@ -2,7 +2,7 @@ const express = require('express');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
-const saltRounds = 10; 
+const saltRounds = 10;
 
 // find all
 router.get('/', function(req, res, next) {
@@ -82,7 +82,7 @@ router.put('/:id', function(req, res, next) {
             user.save(function (err, savedUser) {
                 if (err) {
                     console.log(err);
-                    return next(err); 
+                    return next(err);
                 } else {
                     console.log(savedUser);
                     res.json(savedUser);
@@ -92,7 +92,7 @@ router.put('/:id', function(req, res, next) {
     })
 });
 
-// delete user 
+// delete user
 router.delete('/:id', function(req, res, next) {
     User.findOne({'_id': req.params.id}, function(err, user) {
         if (err) {

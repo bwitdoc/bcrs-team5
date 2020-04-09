@@ -29,10 +29,13 @@ import { SecurityQuestionDetailsComponent } from './pages/security-question-deta
     AuthLayoutComponent,
     HomeComponent,
     SecurityQuestionCreateComponent,
+<<<<<<< HEAD
     SecurityQuestionsListComponent,
     SigninComponent,
     UserDetailsComponent,
     UserListComponent,
+=======
+>>>>>>> 0a2f8a9b9eb7f33abadab2e286ac314bb30d7434
     SecurityQuestionListComponent,
     SigninComponent,
     UserDetailsComponent,

@@ -7,10 +7,12 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
+const SecurityQuestionApi = require('./routes/security-question-api');
 const UserApi = require('./routes/user-api');
 const SessionApi = require('./routes/session-api');
-const SecurityQuestionApi = require('./routes/security-question-api');
-const cors = require('cors');
+
 
 /**
  * App configurations

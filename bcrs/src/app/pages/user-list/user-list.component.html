@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div fxLayout="column">
     <mat-card>
         <mat-card-title>Users Configuration</mat-card-title>
@@ -54,3 +55,18 @@
         </mat-card-content>
     </mat-card>
 </div>
+=======
+<div fxLayout='column'>
+  <mat-card class='mat-elevation-z8'>
+    <mat-card-title>Users List</mat-card-title>
+
+    <br />
+
+    <mat-card-content>
+      <mat-list role='list' *ngFor='let user of users'>
+        <mat-list-item role='listitem'>{{ user.firstname }} {{ user.lastname }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
+>>>>>>> 0a2f8a9b9eb7f33abadab2e286ac314bb30d7434
