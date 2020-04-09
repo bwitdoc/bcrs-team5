@@ -1,1 +1,33 @@
-<p>security-question-list works!</p>
+<div fxLayout="column">
+    <mat-card>
+        <mat-card-title>Security Questions Configuration</mat-card-title>
+        <mat-card-subtitle>
+            <button mat-button routerLink="/security-questions/create/new" color="accent">Create</button>
+        </mat-card-subtitle>
+
+        <br />
+        <mat-card-content *ngIf="securityQuestions">
+            <table-mat-table [dataSource]="securityQuestions">
+                <ng-container matColumnDef="questions">
+                    <th mat-header-cell *matHeaderCellDef>Qestion</th>
+                    <td mat-cell *matCellDef="let element">
+                        {{element.text}}
+                        </td>
+                </ng-container>
+
+                <ng-container matColumnDef="functions">
+                    <th mat-header-cell *matHeaderCellDef>Functions</th>
+
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button routerLink="/security-questions/{{element._id}}">
+                        <mat-icon color="accent">Edit</mat-icon>
+                    </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table-mat-table>
+        </mat-card-content>
+    </mat-card>
+</div>
