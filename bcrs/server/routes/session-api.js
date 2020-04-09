@@ -6,14 +6,15 @@ const router = express.Router();
 
 //User Sign-in
 router.post('/signin', function(req, res, next) {
-  User.findOne({'_id': req.params.id}, function(err, user) {
+  console.log(req.body);
+  User.findOne({'username': req.body.username}, function(err, user) {
     if (err) {
       console.log(err);
       return next(err);
     } else {
       console.log(user);
 
-      if(user); {
+      if(user) {
         let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
 
         if (passwordIsValid) {
