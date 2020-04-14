@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const router = express.Router();
 const saltRounds = 10;
 
-// find all
+// Find all Users
 router.get('/', function(req, res, next) {
     User.find({}).where('isDisabled').equals(false).exec(function(err, users) {
         if (err) {
@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
     });
 });
 
-// find by Id
+// Find by Id
 router.get('/:id', function( req, res, next) {
     User.findOne({'_id': req.params.id}, function(err, user) {
         if (err) {
@@ -30,7 +30,7 @@ router.get('/:id', function( req, res, next) {
     })
 });
 
-// create User
+// Create User
 router.post('/', function(req, res, next) {
     let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
 
@@ -61,7 +61,7 @@ router.post('/', function(req, res, next) {
     })
 });
 
-// update User
+// Update User
 router.put('/:id', function(req, res, next) {
     User.findOne({'_id': req.params.id}, function(err, user) {
         if (err) {
@@ -92,7 +92,7 @@ router.put('/:id', function(req, res, next) {
     })
 });
 
-// delete user
+// Delete user
 router.delete('/:id', function(req, res, next) {
     User.findOne({'_id': req.params.id}, function(err, user) {
         if (err) {
@@ -118,6 +118,19 @@ router.delete('/:id', function(req, res, next) {
             }
         }
     });
+});
+
+// Find User Security Questions
+router.get('/:username/security-questions', function(req, res, next) {
+  User.findOne({'username': req.params.username}, 'securityQuestion', function(err, user) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(user);
+      res.json(user);
+    };
+  });
 });
 
 module.exports = router;
