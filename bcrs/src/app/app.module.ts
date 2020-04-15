@@ -34,6 +34,12 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 import { UserDeleteDialogComponent } from './dialogs/user-delete-dialog/user-delete-dialog.component';
 import { SecurityQuestionDeleteDialogComponent } from './dialogs/security-question-delete-dialog/security-question-delete-dialog.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { InternalServerComponent } from './internal-server/internal-server.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AccountRegistrationComponent } from './account-registration/account-registration.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,13 @@ import { SecurityQuestionDeleteDialogComponent } from './dialogs/security-questi
     UserListComponent,
     SecurityQuestionDetailsComponent,
     UserDeleteDialogComponent,
-    SecurityQuestionDeleteDialogComponent
+    SecurityQuestionDeleteDialogComponent,
+    AboutComponent,
+    ContactComponent,
+    NotFoundComponent,
+    InternalServerComponent,
+    ForgotPasswordComponent,
+    AccountRegistrationComponent
   ],
   imports: [
     BrowserModule,
