@@ -30,8 +30,18 @@ router.get('/:id', function(req, res, next) {
 });
 
 //Find by multiple IDs
-router.get('/find-by-ids', function(req, res, next) {
-  SecurityQuestion.find({}).where('questionId').equals(req.body.questionId).exec(function(err, securityQuestions) {
+router.post('/find-by-ids', function(req, res, next) {
+  const question1 = req.body.question1;
+  const question2 = req.body.question2;
+  const question3 = req.body.question3;
+
+  SecurityQuestion.find({
+    $or: [
+      {'_id': question1},
+      {'_id': question2},
+      {'_id': question3},
+    ]
+  }).exec(function(err, securityQuestions) {
     if (err) {
       console.log(err);
       return next(err);

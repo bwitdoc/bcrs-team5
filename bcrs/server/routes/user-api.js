@@ -122,7 +122,7 @@ router.delete('/:id', function(req, res, next) {
 
 // Find User Security Questions
 router.get('/:username/security-questions', function(req, res, next) {
-  User.findOne({'username': req.params.username}, 'securityQuestion', function(err, user) {
+  User.findOne({'username': req.params.username}, function(err, user) {
     if (err) {
       console.log(err);
       return next(err);

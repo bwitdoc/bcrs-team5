@@ -41,33 +41,50 @@ router.post('/signin', function(req, res, next) {
 
 // Register User
 router.post('/register', function(req, res, next) {
-  let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
+  User.findOne({'username': req.body.username}, function(err, user) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      if (!user) {
+        let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
 
-  let u = {
-      username: req.body.username,
-      password: hashedPassword,
-      firstName: req.body.firstname,
-      lastName: req.body.lastname,
-      phoneNumber: req.body.phoneNumber,
-      address: req.body.address,
-      email: req.body.email,
-      securityQuestion: [req.body.securityQuestion]
-  };
+        let u = {
+          username: req.body.username,
+          password: hashedPassword,
+          firstName: req.body.firstname,
+          lastName: req.body.lastname,
+          phoneNumber: req.body.phoneNumber,
+          address: req.body.address,
+          email: req.body.email,
+          securityQuestion: req.body.securityQuestion
+        };
 
-  User.create(u, function(err, newUser) {
-      if (err) {
-          console.log(err);
-          return next(err);
-      } else {
-          console.log(newUser);
+        User.create(u, function(err, newUser) {
+          if (err) {
+            console.log(err);
+            return next(err);
+          } else {
+            console.log(newUser);
 
-          res.status(200).send({
+            res.status(200).send({
               type: 'success',
               auth: true,
               username: newUser.username,
               time_stamp: new Date()
-          })
+            })
+          }
+        })
+      } else {
+        console.log(`The requested UserName: ${req.body.username} has already been registered with the system. Please pick a new username.`);
+        res.status(500).send({
+          type: 'error',
+          text: `The requested UserName: ${req.body.username} has already been registered with the system. Please pick a new username.`,
+          auth: false,
+          time_stamp: new Date()
+        })
       }
+    }
   })
 });
 
@@ -86,6 +103,15 @@ router.get('/verify/users/:username', function( req, res, next) {
 
 //Verify Security Questions
 router.get('/verify/users/:username/security-questions', function( req, res, next) {
+  const answerToSecurityQuestion1 = req.body.answerToSecurityQuestion1;
+  console.log(answerToSecurityQuestion1);
+
+  const answerToSecurityQuestion2 = req.body.answerToSecurityQuestion2;
+  console.log(answerToSecurityQuestion2);
+
+  const answerToSecurityQuestion3 = req.body.answerToSecurityQuestion3;
+  console.log(answerToSecurityQuestion3);
+
   User.findOne({'username': req.params.username}, function(err, user) {
       if (err) {
           console.log(err);
@@ -93,38 +119,33 @@ router.get('/verify/users/:username/security-questions', function( req, res, nex
       } else {
           console.log(user);
 
-          const question = {
-            questionId: req.body.questionId,
-            answer: req.body.answer
-          };
+          let answer1IsValid = answerToSecurityQuestion1 === user.securityQuestions[0].answer;
+          console.log(answer1IsValid);
 
-          if(user) {
-            let answersAreValid = (req.body.question === user.securityQuestion);
+          let answer2IsValid = answerToSecurityQuestion2 === user.securityQuestions[1].answer;
+          console.log(answer2IsValid);
 
-            if (answersAreValid) {
-              res.status(200).send({
-                type: 'success',
-                auth: true,
-                question: user.securityQuestion,
-                time_stamp: new Date()
-              })
-            } else {
-              console.log(`The answers for username: ${req.body.username} are invalid.`);
-              res.status(401).send({
-                type: 'error',
-                text: 'Invalid answers, please try again.',
-                auth: false,
-                time_stamp: new Date()
-              })
-            }
+          let answer3IsValid = answerToSecurityQuestion3 === user.securityQuestions[2].answer;
+          console.log(answer3IsValid);
+
+          if (answer1IsValid && answer2IsValid && answer3IsValid) {
+            res.status(200).send({
+              type: 'success',
+              auth: true
+            })
+          } else {
+            res.status(200).send({
+              type: 'error',
+              auth: false
+            })
           }
       }
-  });
+  })
 });
 
 // Reset Password
 router.put('/users/:username/reset-password', function(req, res, next) {
-  let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
+  const password = req.body.password;
 
   User.findOne({'username': req.params.username}, function(err, user) {
       if (err) {
@@ -132,6 +153,8 @@ router.put('/users/:username/reset-password', function(req, res, next) {
           return next(err);
       } else {
           console.log(user);
+
+          let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
 
           user.set({
               password: hashedPassword
