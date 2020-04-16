@@ -21,6 +21,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatListModule } from '@angular/material/list';
 
 // Components
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
@@ -79,7 +81,9 @@ import { AccountRegistrationComponent } from './pages/account-registration/accou
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule,
+    MatStepperModule
   ],
   providers: [CookieService, SessionGuard],
   bootstrap: [AppComponent]
