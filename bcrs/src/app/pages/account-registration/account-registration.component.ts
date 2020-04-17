@@ -23,7 +23,7 @@ export class AccountRegistrationComponent implements OnInit {
       console.log(err);
     });
    }
-
+// registration form fields, requiring to be validated by the database
   ngOnInit() {
     this.registrationForm = new FormGroup({
       contactInformation: new FormGroup({
@@ -33,6 +33,7 @@ export class AccountRegistrationComponent implements OnInit {
         address: new FormControl(null, Validators.required),
         email: new FormControl(null, Validators.required)
       }),
+      // required security question fields that have to be validated from the database
       securityQuestions: new FormGroup({
         securityQuestions1: new FormControl(null, Validators.required),
         securityQuestions2: new FormControl(null, Validators.required),
@@ -41,18 +42,20 @@ export class AccountRegistrationComponent implements OnInit {
         answerToSecurityQuestion2: new FormControl(null, Validators.required),
         answerToSecurityQuestion3: new FormControl(null, Validators.required)
       }),
+      // login information validated by the database
       credentials: new FormGroup({
         username: new FormControl(null, Validators.required),
         password: new FormControl(null, Validators.required),
       })
     });
   }
-
+// the 3 parts of the form are constant
   register(form) {
     const contactInformation = form.contactInformation;
     const securityQuestions = form.securityQuestions;
     const credentials = form.credentials;
 
+    // security questions are bound to the corresponding answers for validation
     const selectedSecurityQuestions = [
       {questionId: securityQuestions.securityQuestion1,
       answer: securityQuestions.answerToSecurityQuestion1},
@@ -63,7 +66,10 @@ export class AccountRegistrationComponent implements OnInit {
       {questionId: securityQuestions.securityQuestion3,
       answer: securityQuestions.answerToSecurityQuestion3}
     ];
-
+// register a user by posting the required fields to the database, 
+// allowing the user to then login and use cookies to authenticate the user
+// using proper error handling in the event that a user logs in with incorrect 
+// credentials or invalid data
     this.http.post('/api/session/register', {
       username: credentials.username,
       password: credentials.password,

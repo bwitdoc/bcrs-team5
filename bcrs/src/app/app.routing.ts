@@ -58,17 +58,28 @@ export const AppRoutes: Routes = [
       },
       {
         path: 'contact',
-        component: ContactComponent,
-        canActivate: [SessionGuard]
+        component: ContactComponent
       },
       {
         path: 'internal-server',
-        component: InternalServerComponent,
-        canActivate: [SessionGuard]
+        component: InternalServerComponent
       },
       {
         path: 'not-found',
+<<<<<<< HEAD
+        component: NotFoundComponent
+      }, 
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent,
+        canActivate: [SessionGuard]
+      },
+      {
+        path: 'account-registration',
+        component: AccountRegistrationComponent,
+=======
         component: NotFoundComponent,
+>>>>>>> 70eb91b902fb07b3742ffd1170b4a5d62c5cb26c
         canActivate: [SessionGuard]
       }
     ]

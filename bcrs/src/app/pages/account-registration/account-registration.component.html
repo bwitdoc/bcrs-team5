@@ -10,14 +10,14 @@
             </div>
         </mat-card-content>
     </mat-card>
-
+    <!-- setting up form to recieve data -->
     <form id="regForm" [formGroup]="registrationForm">
         <mat-card-content fxLayout="column" fxLayoutGap="10px">
             <mat-horizontal-stepper #stepper>
                 <mat-step fxFlex formGroupName="contactInformation"
                     [stepControl]="registrationForm.get('contactInformation')">
                 <ng-template matStepLabel>Contact Information</ng-template>
-
+                <!-- first item in form is first name and so on -->
                 <mat-list>
                     <mat-list-item>
                         <mat-form-field fxFlex>
@@ -59,17 +59,17 @@
                         </mat-form-field>
                     </mat-list-item>
                 </mat-list>
-
+                <!-- a next button to route to the next portion of the form -->
                 <br/><br/><br/>
                 <div fxLayoutAlign="end" fxFlex>
                     <button mat-raised-button color="accent" matStepperNext>Next</button>
                 </div>
             </mat-step>
-
+            <!-- the beginning of the security questions for user to answer-->
             <mat-step formGroupName="securityQuestions"
                 [stepControl]="registrationForm.get('securityQuestions')">
                 <ng-template matStepLabel>Security Questions</ng-template>
-
+                <!-- the first security question of 3 total -->
                 <mat-list>
                     <mat-list-item>
                         <mat-form-field fxFlex>
@@ -81,7 +81,7 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-
+            <!-- the answer is attached to the proper question -->
             &nbsp;&nbsp;&nbsp;&nbsp;
             <mat-form-field fxFlex>
                 <input matInput
@@ -134,7 +134,7 @@
         <button mat-raised-button color="accent" matStepperNext>Next</button>
     </div>
 </mat-step>
-
+<!-- registration form required login fields -->
 <mat-step formGroupName="credentials" [stepControl]="registrationForm.get('credentials')">
     <ng-template matStepLabel>Credentials</ng-template>
 
