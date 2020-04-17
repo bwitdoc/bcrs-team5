@@ -10,7 +10,7 @@ import { SecurityQuestionDeleteDialogComponent } from '../../dialogs/security-qu
 })
 export class SecurityQuestionListComponent implements OnInit {
   securityQuestions: any;
-  displayedColumns = ['question', 'functions'];
+  displayedColumns = ['questions', 'functions'];
 
   constructor(private http: HttpClient, private dialog: MatDialog) {
     this.http.get('api/security-questions').subscribe(res => {

@@ -66,9 +66,9 @@ export class AccountRegistrationComponent implements OnInit {
       {questionId: securityQuestions.securityQuestion3,
       answer: securityQuestions.answerToSecurityQuestion3}
     ];
-// register a user by posting the required fields to the database, 
+// register a user by posting the required fields to the database,
 // allowing the user to then login and use cookies to authenticate the user
-// using proper error handling in the event that a user logs in with incorrect 
+// using proper error handling in the event that a user logs in with incorrect
 // credentials or invalid data
     this.http.post('/api/session/register', {
       username: credentials.username,
@@ -78,7 +78,7 @@ export class AccountRegistrationComponent implements OnInit {
       phoneNumber: contactInformation.phoneNumber,
       address: contactInformation.address,
       email: contactInformation.email,
-      securityQuestions: selectedSecurityQuestions
+      securityQuestion: selectedSecurityQuestions
     }).subscribe(res => {
       if (res['auth']) {
         this.cookieService.set('isAuthenticated', 'true', 1);

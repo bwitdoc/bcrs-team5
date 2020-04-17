@@ -85,7 +85,14 @@ import { AccountRegistrationComponent } from './pages/account-registration/accou
     MatListModule,
     MatStepperModule
   ],
-  providers: [CookieService, SessionGuard],
+  entryComponents: [
+    SecurityQuestionCreateComponent,
+    SecurityQuestionDetailsComponent
+  ],
+  providers: [
+    CookieService,
+    SessionGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
