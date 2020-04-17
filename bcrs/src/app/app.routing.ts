@@ -58,18 +58,15 @@ export const AppRoutes: Routes = [
       },
       {
         path: 'contact',
-        component: ContactComponent,
-        canActivate: [SessionGuard]
+        component: ContactComponent
       },
       {
         path: 'internal-server',
-        component: InternalServerComponent,
-        canActivate: [SessionGuard]
+        component: InternalServerComponent
       },
       {
         path: 'not-found',
-        component: NotFoundComponent,
-        canActivate: [SessionGuard]
+        component: NotFoundComponent
       }, 
       {
         path: 'forgot-password',
