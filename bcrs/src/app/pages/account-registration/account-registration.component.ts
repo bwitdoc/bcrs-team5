@@ -35,9 +35,9 @@ export class AccountRegistrationComponent implements OnInit {
       }),
       // required security question fields that have to be validated from the database
       securityQuestions: new FormGroup({
-        securityQuestions1: new FormControl(null, Validators.required),
-        securityQuestions2: new FormControl(null, Validators.required),
-        securityQuestions3: new FormControl(null, Validators.required),
+        securityQuestion1: new FormControl(null, Validators.required),
+        securityQuestion2: new FormControl(null, Validators.required),
+        securityQuestion3: new FormControl(null, Validators.required),
         answerToSecurityQuestion1: new FormControl(null, Validators.required),
         answerToSecurityQuestion2: new FormControl(null, Validators.required),
         answerToSecurityQuestion3: new FormControl(null, Validators.required)
