@@ -23,11 +23,10 @@
     text-decoration: underline;
 }
 
-<<<<<<< HEAD
 .mat-card-content {
     text-align: center;
 }
-=======
+
 .mat-toolbar-row{
   padding-bottom: 15px;
   position: relative;
@@ -37,4 +36,3 @@
   background-color: white;
   position: absolute;
 }
->>>>>>> c5624a26487315745d4d190226e5f32744000884
