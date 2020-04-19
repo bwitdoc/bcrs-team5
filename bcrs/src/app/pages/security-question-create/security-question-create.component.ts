@@ -5,37 +5,31 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-security-question-create',
-  template: `
-
-  `,
-  styles: []
+  templateUrl: './security-question-create.component.html',
+  styleUrls: ['./security-question-create.component.css']
 })
 export class SecurityQuestionCreateComponent implements OnInit {
 
+  constructor(private http: HttpClient, private router: Router, private fb: FormBuilder) { }
   form: FormGroup;
-
-  constructor(private http: HttpClient, private fb: FormBuilder, private router: Router) { }
-
-  ngOnInit()  {
-    this.form = this.fb.group({
-      text: [null, Validators.compose([Validators.required])],
-    });
-  };
-
-  create() {
-    this.http.post('/api/security-questions', {
-      text: this.form.controls.text.value,
-      })
-      .subscribe(res => {
-        this.router.navigate(['/security-questions']);
-      });
-    }
-
-  // cancel
-  cancel() {
-    this.router.navigate(['/security-questions']);
+  ngOnInit() {
+	  this.form = this.fb.group({
+		  text: [null, Validators.compose([Validators.required])]
+	  });
   }
-};
 
-// create
+  // Create
+  create() {
+	  this.http.post('/api/security-questions', {
+		  text: this.form.controls.text.value,
+	  }).subscribe(res => {
+		  this.router.navigate(['/security-questions']);
+	  })
+  }
 
+  // Cancel
+  cancel() {
+	this.router.navigate(['/security-questions']);
+  }
+
+}

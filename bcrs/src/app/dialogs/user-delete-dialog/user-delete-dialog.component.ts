@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-delete-dialog',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-delete-dialog.component.css']
 })
 export class UserDeleteDialogComponent implements OnInit {
+	username: string;
+	constructor(private dialogRef: MatDialogRef<UserDeleteDialogComponent>, @Inject(MAT_DIALOG_DATA) data) {
+		this.username = data.username;
+	}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+	ngOnInit() {
+	}
 }

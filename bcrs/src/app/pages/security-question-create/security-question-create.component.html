@@ -1,15 +1,14 @@
-<div fxLayout='column'>
-  <mat-card class='mat-elevation-z8'>
+<div fxLayout="column">
+  <mat-card class="mat-elevation-z8">
     <mat-card-title>Create Security Question</mat-card-title>
 
     <br />
 
-    <form [formGroup]='form' (ngSubmit)='create()' #securityQuestionForm>
+    <form [formGroup]="form" (ngSubmit)="create()" #securityQuestionForm>
       <mat-card-content>
-        <div fxLayout='column' fxLayoutGap='10px'>
+        <div fxLayout="column" fxLayoutGap="10px">
           <mat-form-field>
-            <input
-              type='text'
+            <input type="text"
               matInput
               [formControl]="form.controls['text']"
               placeholder="Question Text">
@@ -19,9 +18,9 @@
 
       <br />
 
-      <mat-card-actions align='end'>
-        <button mat-raised-button (click)='cancel()' color='warn'>Cancel</button>
-        <button mat-raised-button color='accent'>Submit</button>
+      <mat-card-actions align="end">
+        <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+        <button mat-raised-button color="accent">Submit</button>
       </mat-card-actions>
     </form>
   </mat-card>

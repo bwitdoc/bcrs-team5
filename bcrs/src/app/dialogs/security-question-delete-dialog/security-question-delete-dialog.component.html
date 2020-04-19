@@ -1,1 +1,14 @@
-<p>security-question-delete-dialog works!</p>
+<h2 mat-dialog-title>Confirmation Dialog</h2>
+
+<div mat-dialog-content>
+    <p>Are you sure you want to remove question: <strong>{{questionId}}</strong> from the system?</p>
+    <mat-icon>warning</mat-icon>
+    <small style="color:#bf546a">WARNING: This cannot be undone!</small>
+</div>
+
+<hr>
+
+<div mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close="cancel" color="primary">No Thanks</button>
+    <button mat-raised-button mat-dialog-close="confirm" color="accent" cdkFocusInitial>Accept</button>
+</div>
