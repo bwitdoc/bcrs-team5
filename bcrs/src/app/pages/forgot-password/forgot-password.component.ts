@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.css']
 })
-// authenticates the username that needs a password change to tell 
+// authenticates the username that needs a password change to tell
 // the database which user is changing their password so it can log it
 export class ForgotPasswordComponent implements OnInit {
   isAuthenticated: string;
@@ -19,17 +19,17 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private cookieService: CookieService) {
     this.isAuthenticated = this.route.snapshot.queryParamMap.get('isAuthenticated');
     this.username = this.route.snapshot.queryParamMap.get('username');
-   }
+  }
 
   ngOnInit() {
     this.form = this.fb.group({
       password: [null, Validators.compose([Validators.required])]
     });
   }
-// reset password function that attaches the changed password to 
+// reset password function that attaches the changed password to
 // the correct user, using the session and cookies to track it
   resetPassword() {
-    this.http.post('/api/session/users/' + this.username + './forgot-password', {
+    this.http.put('/api/session/users/' + this.username + '/reset-password', {
       password: this.form.controls['password'].value
     }).subscribe(res => {
       this.cookieService.set('sessionuser', this.username, 1);
