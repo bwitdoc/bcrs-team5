@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 16, 2020
+Assignment: session API
+Description: all API's used for sessions
+==========================*/
+
 const express = require('express');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');

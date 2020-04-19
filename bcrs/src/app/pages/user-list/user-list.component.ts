@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 19, 2020
+Assignment: user list component
+Description: ability to delete users from the list
+==========================*/
+
 import { Component, OnInit } from '@angular/core';
 import { UserDeleteDialogComponent } from '../../dialogs/user-delete-dialog/user-delete-dialog.component';
 import { MatDialog } from '@angular/material/dialog';

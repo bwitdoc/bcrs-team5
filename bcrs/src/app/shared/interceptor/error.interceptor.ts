@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter
+Date: April 19, 2020
+Assignment: error interceptor
+Description: handles errors for 404 and 500 status codes
+==========================*/
+
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';

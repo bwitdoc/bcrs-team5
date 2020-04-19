@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 16, 2020
+Assignment: security question API's
+Description: all API's used for security questions
+==========================*/
+
 const express = require('express');
 const SecurityQuestion = require('../models/security-questions');
 
