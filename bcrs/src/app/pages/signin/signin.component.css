@@ -23,13 +23,10 @@
     text-decoration: underline;
 }
 
-<<<<<<< HEAD
 .mat-card-content {
     text-align: center;
 }
 
-=======
->>>>>>> 62591be991f81bf3e7c38a80fe378d84c91586b2
 .mat-toolbar-row{
   padding-bottom: 15px;
   position: relative;
@@ -38,8 +35,4 @@
 .mat-toolbar{
   background-color: white;
   position: absolute;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 62591be991f81bf3e7c38a80fe378d84c91586b2
