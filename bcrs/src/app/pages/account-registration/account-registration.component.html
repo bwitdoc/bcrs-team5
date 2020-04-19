@@ -151,6 +151,7 @@
                             <mat-list-item>
                                 <mat-form-field fxFlex>
                                     <input matInput
+                                    formControlName='password'
                                     type="password"
                                     placeholder="Password"/>
                                 </mat-form-field>
@@ -160,7 +161,7 @@
                         <div fxLayoutAlign="end">
                             <button mat-raised-button color="accent" matStepperPrevious>Back</button> &nbsp;&nbsp;&nbsp;&nbsp;
                             <button mat-raised-button (click)="register(registrationForm.value)" color="accent"
-                                [disabled]="!registrationForm.invalid"
+                                [disabled]="!registrationForm.valid"
                                 type="submit">submit
                             </button>
                         </div>

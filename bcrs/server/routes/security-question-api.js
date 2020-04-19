@@ -70,7 +70,7 @@ router.post('/', function(req, res, next) {
 });
 
 //Update Security Question
-router.post('/:id', function(req, res, next) {
+router.put('/:id', function(req, res, next) {
   SecurityQuestion.findOne({'_id': req.params.id}, function(err, securityQuestion) {
     if (err) {
       console.log(err);
