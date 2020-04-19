@@ -87,5 +87,10 @@ export const AppRoutes: Routes = [
         component: ForgotPasswordComponent
       }
     ]
+  },
+  {
+    path: "**",
+    pathMatch: 'full',
+    component: NotFoundComponent
   }
 ];
