@@ -1,8 +1,10 @@
-.mat-card-top {
-    margin-top: -10%;
-    margin-left: 20%;
-    margin-right: 20%;
+.signinForm {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 5%;
+
 }
+
 
 .mat-form-field {
     width: auto;
@@ -21,6 +23,18 @@
     text-decoration: underline;
 }
 
+<<<<<<< HEAD
 .mat-card-content {
     text-align: center;
 }
+=======
+.mat-toolbar-row{
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.mat-toolbar{
+  background-color: white;
+  position: absolute;
+}
+>>>>>>> c5624a26487315745d4d190226e5f32744000884

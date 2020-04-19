@@ -9,6 +9,12 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { InternalServerComponent } from './pages/internal-server/internal-server.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
 
 export const AppRoutes: Routes = [
   {
@@ -45,6 +51,23 @@ export const AppRoutes: Routes = [
         component: SecurityQuestionCreateComponent,
         canActivate: [SessionGuard]
       },
+      {
+        path: 'about',
+        component: AboutComponent,
+        canActivate: [SessionGuard]
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      },
+      {
+        path: 'internal-server',
+        component: InternalServerComponent
+      },
+      {
+        path: 'not-found',
+        component: NotFoundComponent
+      }
     ]
   },
   {
@@ -54,6 +77,14 @@ export const AppRoutes: Routes = [
       {
         path: 'signin',
         component: SigninComponent
+      },
+      {
+        path: 'account-registration',
+        component: AccountRegistrationComponent
+      },
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent
       }
     ]
   }

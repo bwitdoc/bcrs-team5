@@ -28,11 +28,9 @@ app.use(cors());
 /**
  * Variables
  */
-const port = 3000; // server port
+const port = process.env.PORT || '3000' // server port
 
-// TODO: This line will need to be replaced with your actual database connection string
-const conn = 'mongodb+srv://admin:admin@bu-webdev-cluster-1-9y4bw.mongodb.net/bcrs-team5?retryWrites=true&w=majority';
-
+const conn = 'mongodb+srv://Friend0fMisery:Kool6767!@buwebdev-cluster-1-sn3vf.mongodb.net/bcrs?retryWrites=true&w=majority';
 /**
  * Database connection
  */

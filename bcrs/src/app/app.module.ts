@@ -21,6 +21,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatListModule } from '@angular/material/list';
 
 // Components
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
@@ -34,6 +36,12 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 import { UserDeleteDialogComponent } from './dialogs/user-delete-dialog/user-delete-dialog.component';
 import { SecurityQuestionDeleteDialogComponent } from './dialogs/security-question-delete-dialog/security-question-delete-dialog.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { InternalServerComponent } from './pages/internal-server/internal-server.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +56,13 @@ import { SecurityQuestionDeleteDialogComponent } from './dialogs/security-questi
     UserListComponent,
     SecurityQuestionDetailsComponent,
     UserDeleteDialogComponent,
-    SecurityQuestionDeleteDialogComponent
+    SecurityQuestionDeleteDialogComponent,
+    AboutComponent,
+    ContactComponent,
+    NotFoundComponent,
+    InternalServerComponent,
+    ForgotPasswordComponent,
+    AccountRegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -67,9 +81,18 @@ import { SecurityQuestionDeleteDialogComponent } from './dialogs/security-questi
     MatInputModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule,
+    MatStepperModule
   ],
-  providers: [CookieService, SessionGuard],
+  entryComponents: [
+    SecurityQuestionCreateComponent,
+    SecurityQuestionDetailsComponent
+  ],
+  providers: [
+    CookieService,
+    SessionGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

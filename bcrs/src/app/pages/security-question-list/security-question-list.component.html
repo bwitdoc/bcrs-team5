@@ -9,10 +9,10 @@
         <mat-card-content *ngIf="securityQuestions">
             <mat-table [dataSource]="securityQuestions">
                 <ng-container matColumnDef="questions">
-                    <th mat-header-cell *matHeaderCellDef>Question</th>
+                    <th mat-header-cell *matHeaderCellDef>Questions</th>
                     <td mat-cell *matCellDef="let element">
                         {{element.text}}
-                        </td>
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="functions">
@@ -20,8 +20,8 @@
 
                     <td mat-cell *matCellDef="let element">
                         <button mat-icon-button routerLink="/security-questions/{{element._id}}">
-                        <mat-icon color="accent">Edit</mat-icon>
-                    </button>
+                            <mat-icon color="accent">Edit</mat-icon>
+                        </button>
                     </td>
                 </ng-container>
 
