@@ -86,8 +86,8 @@ import { AccountRegistrationComponent } from './pages/account-registration/accou
     MatStepperModule
   ],
   entryComponents: [
-    SecurityQuestionCreateComponent,
-    SecurityQuestionDetailsComponent
+    SecurityQuestionDeleteDialogComponent,
+    UserDeleteDialogComponent
   ],
   providers: [
     CookieService,
