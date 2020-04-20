@@ -70,13 +70,11 @@ export const AppRoutes: Routes = [
       }, 
       {
         path: 'forgot-password',
-        component: ForgotPasswordComponent,
-        canActivate: [SessionGuard]
+        component: ForgotPasswordComponent
       },
       {
         path: 'account-registration',
-        component: AccountRegistrationComponent,
-        canActivate: [SessionGuard]
+        component: AccountRegistrationComponent
       },
       {
         path: 'not-found',
