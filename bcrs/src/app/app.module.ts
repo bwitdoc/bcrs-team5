@@ -88,8 +88,8 @@ import { AccountRegistrationComponent } from './pages/account-registration/accou
     MatGridListModule
   ],
   entryComponents: [
-    SecurityQuestionCreateComponent,
-    SecurityQuestionDetailsComponent
+    SecurityQuestionDeleteDialogComponent,
+    UserDeleteDialogComponent
   ],
   providers: [
     CookieService,
