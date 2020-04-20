@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 16, 2020
+Assignment: security question API's
+Description: all API's used for security questions
+==========================*/
+
 const express = require('express');
 const SecurityQuestion = require('../models/security-questions');
 
@@ -70,7 +77,7 @@ router.post('/', function(req, res, next) {
 });
 
 //Update Security Question
-router.post('/:id', function(req, res, next) {
+router.put('/:id', function(req, res, next) {
   SecurityQuestion.findOne({'_id': req.params.id}, function(err, securityQuestion) {
     if (err) {
       console.log(err);

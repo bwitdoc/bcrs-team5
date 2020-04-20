@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 19, 2020
+Assignment: security question details
+Description: SQ function for details
+==========================*/
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,7 +23,7 @@ export class SecurityQuestionDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient, private fb: FormBuilder, private router: Router) {
     this.questionId = this.route.snapshot.paramMap.get('questionId');
 
-    this.http.get('api/security/questions/' + this.questionId).subscribe(res => {
+    this.http.get('api/security-questions/' + this.questionId).subscribe(res => {
       this.question = res;
     }, err => {
       console.log(err);

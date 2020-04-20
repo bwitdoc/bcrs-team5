@@ -1,6 +1,12 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 16, 2020
+Assignment: session API
+Description: all API's used for sessions
+==========================*/
+
 const express = require('express');
 const User = require('../models/user');
-const SecurityQuestion = require('../models/security-questions');
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 
@@ -103,7 +109,7 @@ router.get('/verify/users/:username', function( req, res, next) {
 });
 
 //Verify Security Questions
-router.get('/verify/users/:username/security-questions', function( req, res, next) {
+router.post('/verify/users/:username/security-questions', function( req, res, next) {
   const answerToSecurityQuestion1 = req.body.answerToSecurityQuestion1;
   console.log(answerToSecurityQuestion1);
 
@@ -120,13 +126,13 @@ router.get('/verify/users/:username/security-questions', function( req, res, nex
       } else {
           console.log(user);
 
-          let answer1IsValid = answerToSecurityQuestion1 === user.securityQuestions[0].answer;
+          let answer1IsValid = answerToSecurityQuestion1 === user.securityQuestion[0].answer;
           console.log(answer1IsValid);
 
-          let answer2IsValid = answerToSecurityQuestion2 === user.securityQuestions[1].answer;
+          let answer2IsValid = answerToSecurityQuestion2 === user.securityQuestion[1].answer;
           console.log(answer2IsValid);
 
-          let answer3IsValid = answerToSecurityQuestion3 === user.securityQuestions[2].answer;
+          let answer3IsValid = answerToSecurityQuestion3 === user.securityQuestion[2].answer;
           console.log(answer3IsValid);
 
           if (answer1IsValid && answer2IsValid && answer3IsValid) {

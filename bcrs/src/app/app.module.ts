@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatListModule } from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 // Components
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
@@ -83,9 +84,17 @@ import { AccountRegistrationComponent } from './pages/account-registration/accou
     MatDialogModule,
     MatMenuModule,
     MatListModule,
-    MatStepperModule
+    MatStepperModule,
+    MatGridListModule
   ],
-  providers: [CookieService, SessionGuard],
+  entryComponents: [
+    SecurityQuestionDeleteDialogComponent,
+    UserDeleteDialogComponent
+  ],
+  providers: [
+    CookieService,
+    SessionGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

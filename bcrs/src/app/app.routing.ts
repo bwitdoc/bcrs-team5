@@ -67,6 +67,7 @@ export const AppRoutes: Routes = [
       {
         path: 'not-found',
         component: NotFoundComponent
+<<<<<<< HEAD
       }, 
       {
         path: 'forgot-password',
@@ -80,6 +81,8 @@ export const AppRoutes: Routes = [
         path: 'not-found',
         component: NotFoundComponent,
         canActivate: [SessionGuard]
+=======
+>>>>>>> afa35e967759af95c4d60b9729abed3b0be41630
       }
     ]
   },
@@ -100,5 +103,10 @@ export const AppRoutes: Routes = [
         component: ForgotPasswordComponent
       }
     ]
+  },
+  {
+    path: "**",
+    pathMatch: 'full',
+    component: NotFoundComponent
   }
 ];

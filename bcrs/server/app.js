@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 19, 2020
+Assignment: app.js
+Description: the required backend code to run the app
+==========================*/
+
 /**
  * Require statements
  */

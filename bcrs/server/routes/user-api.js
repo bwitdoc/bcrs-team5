@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 16, 2020
+Assignment: user API's
+Description: all API's used for users
+==========================*/
+
 const express = require('express');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
@@ -122,7 +129,7 @@ router.delete('/:id', function(req, res, next) {
 
 // Find User Security Questions
 router.get('/:username/security-questions', function(req, res, next) {
-  User.findOne({'username': req.params.username}, function(err, user) {
+  User.findOne({'username': req.params.username}, 'securityQuestion', function(err, user) {
     if (err) {
       console.log(err);
       return next(err);

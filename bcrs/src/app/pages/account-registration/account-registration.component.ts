@@ -1,3 +1,10 @@
+/*=========================
+Name: Brittany Dockter, Justin Singleton, Gabriel Sanchez
+Date: April 19, 2020
+Assignment: account registration backend
+Description: form functions for account reg page
+==========================*/
+
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -35,9 +42,9 @@ export class AccountRegistrationComponent implements OnInit {
       }),
       // required security question fields that have to be validated from the database
       securityQuestions: new FormGroup({
-        securityQuestions1: new FormControl(null, Validators.required),
-        securityQuestions2: new FormControl(null, Validators.required),
-        securityQuestions3: new FormControl(null, Validators.required),
+        securityQuestion1: new FormControl(null, Validators.required),
+        securityQuestion2: new FormControl(null, Validators.required),
+        securityQuestion3: new FormControl(null, Validators.required),
         answerToSecurityQuestion1: new FormControl(null, Validators.required),
         answerToSecurityQuestion2: new FormControl(null, Validators.required),
         answerToSecurityQuestion3: new FormControl(null, Validators.required)
@@ -66,9 +73,9 @@ export class AccountRegistrationComponent implements OnInit {
       {questionId: securityQuestions.securityQuestion3,
       answer: securityQuestions.answerToSecurityQuestion3}
     ];
-// register a user by posting the required fields to the database, 
+// register a user by posting the required fields to the database,
 // allowing the user to then login and use cookies to authenticate the user
-// using proper error handling in the event that a user logs in with incorrect 
+// using proper error handling in the event that a user logs in with incorrect
 // credentials or invalid data
     this.http.post('/api/session/register', {
       username: credentials.username,
@@ -78,7 +85,7 @@ export class AccountRegistrationComponent implements OnInit {
       phoneNumber: contactInformation.phoneNumber,
       address: contactInformation.address,
       email: contactInformation.email,
-      securityQuestions: selectedSecurityQuestions
+      securityQuestion: selectedSecurityQuestions
     }).subscribe(res => {
       if (res['auth']) {
         this.cookieService.set('isAuthenticated', 'true', 1);

@@ -1,3 +1,10 @@
+/*=========================
+Name: Justin Singleton
+Date: April 5, 2020
+Assignment: user.js
+Description: user model for user data fields
+==========================*/
+
 const mongoose = require('mongoose');
 
 let securityQuestions = mongoose.Schema({

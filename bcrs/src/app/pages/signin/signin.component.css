@@ -5,7 +5,6 @@
 
 }
 
-
 .mat-form-field {
     width: auto;
 }
@@ -21,6 +20,10 @@
 
 .forgot-password-link:hover {
     text-decoration: underline;
+}
+
+.mat-card-content {
+    text-align: center;
 }
 
 .mat-toolbar-row{
