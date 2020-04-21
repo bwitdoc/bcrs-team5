@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SessionGuard } from './shared/guards/session.guard';
+import { RoleGuard } from './shared/guards/role-guard';
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
@@ -15,6 +16,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
+import { PurchasesByServiceComponent } from './pages/purchases-by-service/purchases-by-service.component';
 
 export const AppRoutes: Routes = [
   {
@@ -52,9 +54,13 @@ export const AppRoutes: Routes = [
         canActivate: [SessionGuard]
       },
       {
+        path: 'purchases-by-service',
+        component: PurchasesByServiceComponent,
+        canActivate: [RoleGuard]
+      },
+      {
         path: 'about',
-        component: AboutComponent,
-        canActivate: [SessionGuard]
+        component: AboutComponent
       },
       {
         path: 'contact',

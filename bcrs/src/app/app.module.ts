@@ -23,7 +23,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatListModule } from '@angular/material/list';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ChartModule } from 'primeng/chart';
+
+
 
 // Components
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
@@ -89,7 +92,8 @@ import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/
     MatMenuModule,
     MatListModule,
     MatStepperModule,
-    MatGridListModule
+    MatGridListModule,
+    ChartModule
   ],
   entryComponents: [
     SecurityQuestionDeleteDialogComponent,

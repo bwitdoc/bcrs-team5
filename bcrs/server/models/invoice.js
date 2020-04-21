@@ -25,4 +25,3 @@ let invoiceSchema = mongoose.Schema({
 
 // export for public use
 module.exports = mongoose.model('Invoice', invoiceSchema);
-module.exports = mongoose.model('lineItem', lineItemSchema);
