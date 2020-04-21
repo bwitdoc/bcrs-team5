@@ -38,7 +38,7 @@ router.post('/:username', function(req, res, next) {
 });
 
 // Find Purchases By Service
-router.get('/purchases-graph', function(req, res, next) {
+router.get('purchases-graph', function(req, res, next) {
   Invoice.aggregate([
     {"$unwind": "$lineItems"},
 

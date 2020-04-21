@@ -140,5 +140,18 @@ router.get('/:username/security-questions', function(req, res, next) {
   });
 });
 
+// Find User Role
+router.get('/:username/role', function(req, res, next) {
+  User.findOne({'username': req.params.username}, 'role', function(err, user) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(user);
+      res.json(user);
+    };
+  });
+});
+
 module.exports = router;
 

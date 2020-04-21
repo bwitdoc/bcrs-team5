@@ -55,8 +55,7 @@ export const AppRoutes: Routes = [
       },
       {
         path: 'purchases-by-service',
-        component: PurchasesByServiceComponent,
-        canActivate: [RoleGuard]
+        component: PurchasesByServiceComponent
       },
       {
         path: 'about',

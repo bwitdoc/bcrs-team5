@@ -14,7 +14,7 @@ export class PurchasesByServiceComponent implements OnInit {
 
     constructor(private http: HttpClient) {
         // Call the purchases-graph API
-        this.http.get('/api/invoices/purchases-graph').subscribe(res => {
+        this.http.get('api/invoices/purchases-graph').subscribe(res => {
             // map the response data to the purchases variable
             this.purchases = res;
 
@@ -51,7 +51,8 @@ export class PurchasesByServiceComponent implements OnInit {
                         data: this.itemCount
                     },
                 ]
-            };            // Verify the data objects structure matches primeNG's expected format
+            };
+            // Verify the data objects structure matches primeNG's expected format
             console.log('Date object');
             console.log(this.data);
         }, err => {

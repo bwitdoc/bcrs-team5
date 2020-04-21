@@ -6,6 +6,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CookieService } from 'ngx-cookie-service';
 import { SessionGuard } from './shared/guards/session.guard';
+import { RoleGuard } from './shared/guards/role-guard';
 
 // Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -101,7 +102,8 @@ import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/
   ],
   providers: [
     CookieService,
-    SessionGuard
+    SessionGuard,
+    RoleGuard
   ],
   bootstrap: [AppComponent]
 })
