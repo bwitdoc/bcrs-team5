@@ -4,8 +4,13 @@ Date: April 20, 2020
 Assignment: invoice.js
 Description: create an invoiceSchema for orders
 ==========================*/
-const lineItemSchema = require('./lineItem.js');
 const mongoose = require('mongoose');
+
+// line item schema
+let lineItemSchema = mongoose.Schema({
+  title: {type: String},
+  price: {type: Number}
+});
 
 // invoice schema
 let invoiceSchema = mongoose.Schema({
@@ -20,3 +25,4 @@ let invoiceSchema = mongoose.Schema({
 
 // export for public use
 module.exports = mongoose.model('Invoice', invoiceSchema);
+module.exports = mongoose.model('lineItem', lineItemSchema);
