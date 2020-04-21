@@ -43,7 +43,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { InternalServerComponent } from './pages/internal-server/internal-server.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
-import { PurchasesByServiceComponent } from './purchases-by-service/purchases-by-service.component';
+import { PurchasesByServiceComponent } from './pages/purchases-by-service/purchases-by-service.component';
+import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/invoice-summary-dialog.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { PurchasesByServiceComponent } from './purchases-by-service/purchases-by
     ForgotPasswordComponent,
     AccountRegistrationComponent,
     PurchasesByServiceComponent
+    InvoiceSummaryDialogComponent
   ],
   imports: [
     BrowserModule,

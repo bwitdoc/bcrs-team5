@@ -35,6 +35,13 @@ export class UserDetailsComponent implements OnInit {
       this.form.controls.address.setValue(this.user.address);
       this.form.controls.email.setValue(this.user.email);
       this.form.controls.role.setValue(this.user.role);
+
+      this.http.get('/api/roles').subscribe(res => {
+        this.roles = res;
+        console.log(this.roles);
+      }, err => {
+        console.log(err);
+      })
     });
    }
 

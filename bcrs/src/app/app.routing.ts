@@ -67,6 +67,22 @@ export const AppRoutes: Routes = [
       {
         path: 'not-found',
         component: NotFoundComponent
+<<<<<<< HEAD
+      }, 
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent
+      },
+      {
+        path: 'account-registration',
+        component: AccountRegistrationComponent
+      },
+      {
+        path: 'not-found',
+        component: NotFoundComponent,
+        canActivate: [SessionGuard]
+=======
+>>>>>>> afa35e967759af95c4d60b9729abed3b0be41630
       }
     ]
   },
