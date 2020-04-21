@@ -13,4 +13,4 @@ let roleSchema = mongoose.Schema({
 });
 
 // export for public use
-module.exports = mongoose.model('Role', roleSchema);
+module.exports = mongoose.model('Roles', roleSchema);

@@ -66,7 +66,7 @@ import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/
     InternalServerComponent,
     ForgotPasswordComponent,
     AccountRegistrationComponent,
-    PurchasesByServiceComponent
+    PurchasesByServiceComponent,
     InvoiceSummaryDialogComponent
   ],
   imports: [

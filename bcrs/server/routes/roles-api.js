@@ -6,7 +6,7 @@ Description: all API's used for roles
 ==========================*/
 
 const express = require('express');
-const Roles = require('../models/roles');
+const Roles = require('../models/role');
 
 const router = express.Router();
 
@@ -92,4 +92,4 @@ router.delete('/:roleId', function(req, res, next) {
   })
 });
 
-module.exports = routes;
+module.exports = router;

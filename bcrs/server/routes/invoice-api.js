@@ -62,3 +62,5 @@ router.get('/purchases-graph', function(req, res, next) {
       }
   });
 });
+
+module.exports = router;
