@@ -21,7 +21,7 @@ Description: basic form for user details/data
                         <input type="text" matInput [formControl="form.controls['lastname']"
                             placeholder="Last name"/>
                     </mat-form-field>
-
+                    <!-- map roles to users portion -->
                     <mat-form-field>
                         <mat-select [formControl]="form.controls['role']"
                                 placeholder="Role">
@@ -31,7 +31,7 @@ Description: basic form for user details/data
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-
+                    <!-- end roles -->
                     <mat-form-field>
                         <input type="text" matInput [formControl="form.controls['phoneNumber']"
                             placeholder="Phone number"/>
