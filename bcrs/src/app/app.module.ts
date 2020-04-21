@@ -43,6 +43,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { InternalServerComponent } from './pages/internal-server/internal-server.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
+import { PurchasesByServiceComponent } from './purchases-by-service/purchases-by-service.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { AccountRegistrationComponent } from './pages/account-registration/accou
     NotFoundComponent,
     InternalServerComponent,
     ForgotPasswordComponent,
-    AccountRegistrationComponent
+    AccountRegistrationComponent,
+    PurchasesByServiceComponent
   ],
   imports: [
     BrowserModule,
