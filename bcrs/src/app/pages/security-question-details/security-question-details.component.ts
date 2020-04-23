@@ -23,14 +23,14 @@ export class SecurityQuestionDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient, private fb: FormBuilder, private router: Router) {
     this.questionId = this.route.snapshot.paramMap.get('questionId');
 
-    this.http.get('api/security-questions/' + this.questionId).subscribe(res => {
+    this.http.get('api/security-questions/' + this.questionId.subscribe(res => {
       this.question = res;
     }, err => {
       console.log(err);
     }, () => {
       this.form.controls.text.setValue(this.question.text);
-    });
-}
+    }));
+  }
 
   ngOnInit() {
     this.form = this.fb.group({

@@ -35,7 +35,7 @@ export class UserDetailsComponent implements OnInit {
       this.form.controls.address.setValue(this.user.address);
       this.form.controls.email.setValue(this.user.email);
       this.form.controls.role.setValue(this.user.role);
-      
+
       // map roles to users update
       this.http.get('/api/roles').subscribe(res => {
         this.roles = res;
@@ -45,14 +45,15 @@ export class UserDetailsComponent implements OnInit {
       })
     });
    }
-    // end 
+    // end
 
   ngOnInit() {
     this.form = this.fb.group({
       firstname: [null, Validators.compose([Validators.required])],
       lastname: [null, Validators.compose([Validators.required])],
       phoneNumber: [null, Validators.compose([Validators.required])],
-      address: [null, Validators.compose([Validators.required, Validators.email])],
+      address: [null, Validators.compose([Validators.required])],
+      email: [null, Validators.compose([Validators.required, Validators.email])],
       role: [null, Validators.compose([Validators.required])]
     });
   }
