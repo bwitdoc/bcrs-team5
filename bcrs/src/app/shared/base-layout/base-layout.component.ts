@@ -13,12 +13,9 @@ export class BaseLayoutComponent implements OnInit {
 
   constructor(private http: HttpClient, private cookieService: CookieService) {
     this.http.get('/api/users/' + this.cookieService.get('sessionuser') + '/role').subscribe(res => {
-      console.log(res);
-      if (res = "admin") {
-          console.log('true');
+      if (res === "admin") {
           this.show = true;
       } else {
-          console.log('false');
           this.show = false;
       }
     });

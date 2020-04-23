@@ -20,11 +20,7 @@ Description: html for the delete dialog page
         <button class="navbar-link" routerLink="/session/signin" mat-button>Login</button>
         <button class="navbar-link" routerLink="/about" mat-button>About</button>
         <button class="navbar-link" routerLink="/contact" mat-button>Contact Us</button>
-        <button class="navbar-link" routerLink="/security-questions" mat-button>Account</button>
-      </div>
-
-      <div class='admin'>
-        <button class="navbar-link" routerLink="/admin" mat-button fxLayoutAlign='end'>Admin</button>
+        <button *ngIf='show' class="navbar-link" routerLink="/admin" mat-button>Admin</button>
       </div>
     </mat-toolbar>
   </nav>

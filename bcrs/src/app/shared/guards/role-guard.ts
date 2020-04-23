@@ -12,7 +12,7 @@ export class RoleGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         return this.getRole().pipe(map(res => {
             console.log(res);
-            if (res = "admin") {
+            if (res === "admin") {
                 return true;
             } else {
                 this.router.navigate(['/']);

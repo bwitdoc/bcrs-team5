@@ -32,27 +32,27 @@ export const AppRoutes: Routes = [
       {
         path: 'users',
         component: UserListComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'users/:userId',
         component: UserDetailsComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-questions',
         component: SecurityQuestionListComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-questions/create/new',
         component: SecurityQuestionCreateComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'purchases-by-service',
@@ -72,12 +72,9 @@ export const AppRoutes: Routes = [
         component: InternalServerComponent
       },
       {
-        path: 'not-found',
-        component: NotFoundComponent
-      },
-      {
         path: 'admin',
-        component: AdminComponent
+        component: AdminComponent,
+        canActivate: [RoleGuard]
       }
     ]
   },

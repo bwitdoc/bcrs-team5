@@ -29,6 +29,9 @@ Description: SQ list html build
                         <button mat-icon-button routerLink="/security-questions/{{element._id}}">
                             <mat-icon color="accent">edit</mat-icon>
                         </button>
+                        <button mat-icon-button (click)="delete(element._id)">
+                          <mat-icon color="accent">delete</mat-icon>
+                        </button>
                     </td>
                 </ng-container>
 
