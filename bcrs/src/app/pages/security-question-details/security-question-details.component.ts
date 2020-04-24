@@ -30,7 +30,7 @@ export class SecurityQuestionDetailsComponent implements OnInit {
     }, () => {
       this.form.controls.text.setValue(this.question.text);
     });
-}
+  }
 
   ngOnInit() {
     this.form = this.fb.group({

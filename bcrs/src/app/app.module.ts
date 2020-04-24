@@ -49,6 +49,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
 import { PurchasesByServiceComponent } from './pages/purchases-by-service/purchases-by-service.component';
 import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/invoice-summary-dialog.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/
     ForgotPasswordComponent,
     AccountRegistrationComponent,
     PurchasesByServiceComponent,
-    InvoiceSummaryDialogComponent
+    InvoiceSummaryDialogComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

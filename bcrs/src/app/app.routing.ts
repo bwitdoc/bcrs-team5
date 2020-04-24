@@ -17,6 +17,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
 import { PurchasesByServiceComponent } from './pages/purchases-by-service/purchases-by-service.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 export const AppRoutes: Routes = [
   {
@@ -31,31 +32,32 @@ export const AppRoutes: Routes = [
       {
         path: 'users',
         component: UserListComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'users/:userId',
         component: UserDetailsComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-questions',
         component: SecurityQuestionListComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-questions/create/new',
         component: SecurityQuestionCreateComponent,
-        canActivate: [SessionGuard]
+        canActivate: [RoleGuard]
       },
       {
         path: 'purchases-by-service',
-        component: PurchasesByServiceComponent
+        component: PurchasesByServiceComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'about',
@@ -70,8 +72,9 @@ export const AppRoutes: Routes = [
         component: InternalServerComponent
       },
       {
-        path: 'not-found',
-        component: NotFoundComponent
+        path: 'admin',
+        component: AdminComponent,
+        canActivate: [RoleGuard]
       }
     ]
   },

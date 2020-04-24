@@ -7,12 +7,12 @@ import { map } from 'rxjs/operators';
 @Injectable({providedIn: 'root'})
 export class RoleGuard implements CanActivate {
 
-    constructor(private router: Router, private http: HttpClient, private CookieService: CookieService) { }
+    constructor(private router: Router, private http: HttpClient, private cookieService: CookieService) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         return this.getRole().pipe(map(res => {
             console.log(res);
-            if (res === 'admin') {
+            if (res === "admin") {
                 return true;
             } else {
                 this.router.navigate(['/']);
@@ -22,6 +22,6 @@ export class RoleGuard implements CanActivate {
     }
 
     getRole() {
-        return this.http.get('/api/users/' + this.CookieService.get('sessionuser') + '/role');
+        return this.http.get('/api/users/' + this.cookieService.get('sessionuser') + '/role');
     }
 }

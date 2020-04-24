@@ -20,9 +20,8 @@ Description: html for the delete dialog page
         <button class="navbar-link" routerLink="/session/signin" mat-button>Login</button>
         <button class="navbar-link" routerLink="/about" mat-button>About</button>
         <button class="navbar-link" routerLink="/contact" mat-button>Contact Us</button>
-        <button class="navbar-link" routerLink="/security-questions" mat-button>Account</button>
+        <button *ngIf='show' class="navbar-link" routerLink="/admin" mat-button>Admin</button>
       </div>
-
     </mat-toolbar>
   </nav>
 
@@ -38,7 +37,13 @@ Description: html for the delete dialog page
     <footer class="footer">
       <mat-toolbar class="footer-content">
         <p>
-          &copy; {{year | date: 'yyyy'}} - Bob's Computer Repair Shop - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
+          &copy; {{year | date: 'yyyy'}} - Bob's Computer Repair Shop - <a
+          href="https://www.bellevue.edu/"
+          class="bu-link"
+          target="_blank"
+          style='color: purple;'>
+            Bellevue University
+          </a>
         </p>
       </mat-toolbar>
     </footer>
