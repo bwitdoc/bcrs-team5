@@ -76,15 +76,18 @@ export const AppRoutes: Routes = [
       },
       {
         path: 'service-repair',
-        component: ServiceRepairComponent
+        component: ServiceRepairComponent,
+        canActivate: [SessionGuard]
       },
       {
         path: 'invoice-summary-dialog',
-        component: InvoiceSummaryDialogComponent
+        component: InvoiceSummaryDialogComponent,
+        canActivate: [SessionGuard]
       },
       {
         path: 'role-create',
-        component: RoleCreateComponent
+        component: RoleCreateComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'admin',

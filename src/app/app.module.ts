@@ -80,8 +80,7 @@ import { RoleCreateComponent } from './pages/role-create/role-create.component';
     InvoiceSummaryDialogComponent,
     AdminComponent,
     ServiceRepairComponent,
-    RoleCreateComponent,
-    InvoiceSummaryDialogComponent
+    RoleCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +108,8 @@ import { RoleCreateComponent } from './pages/role-create/role-create.component';
   ],
   entryComponents: [
     SecurityQuestionDeleteDialogComponent,
-    UserDeleteDialogComponent
+    UserDeleteDialogComponent,
+    InvoiceSummaryDialogComponent
   ],
   providers: [
     CookieService,

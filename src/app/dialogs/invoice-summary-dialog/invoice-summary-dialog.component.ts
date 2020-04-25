@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  invoice-summary-dialog.component.ts
+; Author: Gabriel Sanchez
+; Date:   24 April 2020
+; Description: Material dialog for the Invoice Summary dialog
+;===========================================
+*/
+
 import { Component, OnInit, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
