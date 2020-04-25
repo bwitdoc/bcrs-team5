@@ -26,6 +26,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ChartModule } from 'primeng/chart';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 
@@ -50,6 +52,9 @@ import { AccountRegistrationComponent } from './pages/account-registration/accou
 import { PurchasesByServiceComponent } from './pages/purchases-by-service/purchases-by-service.component';
 import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/invoice-summary-dialog.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { ServiceRepairComponent } from './pages/service-repair/service-repair.component';
+import { RoleCreateComponent } from './pages/role-create/role-create.component';
+
 
 @NgModule({
   declarations: [
@@ -73,7 +78,10 @@ import { AdminComponent } from './pages/admin/admin.component';
     AccountRegistrationComponent,
     PurchasesByServiceComponent,
     InvoiceSummaryDialogComponent,
-    AdminComponent
+    AdminComponent,
+    ServiceRepairComponent,
+    RoleCreateComponent,
+    InvoiceSummaryDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +104,8 @@ import { AdminComponent } from './pages/admin/admin.component';
     MatListModule,
     MatStepperModule,
     MatGridListModule,
-    ChartModule
+    ChartModule,
+    MatCheckboxModule
   ],
   entryComponents: [
     SecurityQuestionDeleteDialogComponent,

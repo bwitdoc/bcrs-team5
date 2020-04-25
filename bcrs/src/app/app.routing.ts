@@ -18,6 +18,9 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { AccountRegistrationComponent } from './pages/account-registration/account-registration.component';
 import { PurchasesByServiceComponent } from './pages/purchases-by-service/purchases-by-service.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { ServiceRepairComponent } from './pages/service-repair/service-repair.component';
+import { RoleCreateComponent } from './pages/role-create/role-create.component';
+import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/invoice-summary-dialog.component';
 
 export const AppRoutes: Routes = [
   {
@@ -70,6 +73,18 @@ export const AppRoutes: Routes = [
       {
         path: 'internal-server',
         component: InternalServerComponent
+      },
+      {
+        path: 'service-repair',
+        component: ServiceRepairComponent
+      },
+      {
+        path: 'invoice-summary-dialog',
+        component: InvoiceSummaryDialogComponent
+      },
+      {
+        path: 'role-create',
+        component: RoleCreateComponent
       },
       {
         path: 'admin',
