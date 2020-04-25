@@ -6,7 +6,7 @@ Description: reset password functions
 ==========================*/
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -21,14 +21,26 @@ import { CookieService } from 'ngx-cookie-service';
 export class ForgotPasswordComponent implements OnInit {
 
   form: FormGroup;
+  forgotForm: FormGroup;
+  securityQuestions: any;
+  errorMessage: string;
 
   constructor(private http: HttpClient, private router: Router, private fb: FormBuilder, private cookieService: CookieService) {
   }
 
   ngOnInit() {
-    this.form = this.fb.group({
-      username: [null, Validators.compose([Validators.required])],
-      password: [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])]
+    this.forgotForm = new FormGroup({
+      username: new FormGroup({
+        username: new FormControl(null, Validators.required),
+      }),
+      securityQuestions: new FormGroup({
+        answerToSecurityQuestion1: new FormControl(null, Validators.required),
+        answerToSecurityQuestion2: new FormControl(null, Validators.required),
+        answerToSecurityQuestion3: new FormControl(null, Validators.required)
+      }),
+      password: new FormGroup({
+        password: new FormControl(null, Validators.required)
+      })
     });
   }
 // reset password function that attaches the changed password to
@@ -42,6 +54,30 @@ export class ForgotPasswordComponent implements OnInit {
       this.router.navigate(['/']);
     }, err => {
       console.log(err);
+    });
+  }
+
+  getQuestions() {
+    let username = this.form.controls['username'].value;
+    this.http.get('/api/users/' + username + '/security-questions').subscribe(res => {
+      this.securityQuestions = res;
+    }, err => {
+      console.log(err)
+    });
+  }
+
+  verifyAnswers() {
+    let username = this.form.controls['username'].value;
+    this.http.post('/api/session/users/' + username + '/security-questions', {
+      answerToSecurityQuestion1: this.form.controls['answerToSecurityQuestion1'].value,
+      answerToSecurityQuestion2: this.form.controls['answerToSecurityQuestion2'].value,
+      answerToSecurityQuestion3: this.form.controls['answerToSecurityQuestion3'].value
+    }).subscribe(res => {
+      console.log('correct');
+    }, err => {
+      console.log(err);
+      this.errorMessage = err;
+      this.router.navigate(['/']);
     });
   }
 }
