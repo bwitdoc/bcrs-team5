@@ -134,8 +134,8 @@ router.get('/:username/security-questions', function(req, res, next) {
       console.log(err);
       return next(err);
     } else {
-      console.log(user);
-      res.json(user);
+      console.log(user.securityQuestion);
+      res.json(user.securityQuestion);
     };
   });
 });

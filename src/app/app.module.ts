@@ -54,6 +54,8 @@ import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/
 import { AdminComponent } from './pages/admin/admin.component';
 import { ServiceRepairComponent } from './pages/service-repair/service-repair.component';
 import { RoleCreateComponent } from './pages/role-create/role-create.component';
+import { SecurityQuestionAskComponent } from './pages/security-question-ask/security-question-ask.component';
+import { PasswordResetComponent } from './pages/password-reset/password-reset.component';
 
 
 @NgModule({
@@ -80,7 +82,9 @@ import { RoleCreateComponent } from './pages/role-create/role-create.component';
     InvoiceSummaryDialogComponent,
     AdminComponent,
     ServiceRepairComponent,
-    RoleCreateComponent
+    RoleCreateComponent,
+    SecurityQuestionAskComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,

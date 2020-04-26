@@ -21,6 +21,8 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { ServiceRepairComponent } from './pages/service-repair/service-repair.component';
 import { RoleCreateComponent } from './pages/role-create/role-create.component';
 import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/invoice-summary-dialog.component';
+import { SecurityQuestionAskComponent } from './pages/security-question-ask/security-question-ask.component';
+import { PasswordResetComponent } from './pages/password-reset/password-reset.component';
 
 export const AppRoutes: Routes = [
   {
@@ -56,6 +58,14 @@ export const AppRoutes: Routes = [
         path: 'security-questions/create/new',
         component: SecurityQuestionCreateComponent,
         canActivate: [RoleGuard]
+      },
+      {
+        path: 'security-questions/ask/:username',
+        component: SecurityQuestionAskComponent
+      },
+      {
+        path: 'password-reset',
+        component: PasswordResetComponent
       },
       {
         path: 'purchases-by-service',
