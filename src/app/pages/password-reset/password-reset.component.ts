@@ -11,20 +11,24 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class PasswordResetComponent implements OnInit {
 
+  username: string;
   form: FormGroup;
-  password: string;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private fb: FormBuilder, private cookieService: CookieService) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router, private fb: FormBuilder, private cookieService: CookieService) {
+    this.username = this.route.snapshot.queryParamMap.get('username');
+  }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      password: [null, Validators.compose([Validators.required])]
+    });
   }
 
   resetPassword() {
-    let username = this.form.controls['username'].value;
-    this.http.put('/api/session/users/' + username + '/reset-password', {
+    this.http.put('/api/session/users/' + this.username + '/reset-password', {
       password: this.form.controls['password'].value
     }).subscribe(res => {
-      this.cookieService.set('sessionuser', username, 1);
+      this.cookieService.set('sessionuser', this.username, 1);
       this.router.navigate(['/']);
     }, err => {
       console.log(err);

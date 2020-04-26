@@ -128,16 +128,16 @@ router.delete('/:id', function(req, res, next) {
 });
 
 // Find User Security Questions
-router.get('/:username/security-questions', function(req, res, next) {
-  User.findOne({'username': req.params.username}, 'securityQuestion', function(err, user) {
+router.get('/:username/security-questions', function (req, res, next) {
+  User.findOne({'username': req.params.username}, function (err, user) {
     if (err) {
       console.log(err);
       return next(err);
     } else {
-      console.log(user.securityQuestion);
+      console.log(user);
       res.json(user.securityQuestion);
-    };
-  });
+    }
+  })
 });
 
 // Find User Role
